@@ -48,7 +48,7 @@ Caso queira desabilitar essa referência ao gerenciar de pacotes, basta colocar 
 </Project>
 ```
 
-## Cenário de uso para otimização de trabalho manual
+## Cenário de uso para otimizar o processo de desenvolvimento
 Como dito anteriormente, a utilização do gerenciador de versões de pacotes pode ser extremamente útil para uma equipe que trabalha com aplicações em microservices.
 Tendo como base a equipe utilize uma esteira de CI/CD, pode ser possível automatizar a utilização desse arquivo durante o processo de `build` da aplicação.
 Por exemplo:
