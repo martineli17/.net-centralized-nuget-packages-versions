@@ -1,0 +1,45 @@
+# ASP.NET
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+trigger:
+- master
+
+resources:
+  repositories:
+    - repository: NugetDependenciesConfiguration
+      ref: master
+      type: git
+      name: nuget-centralized-dependencies-file # nome do repositorio no qual encontra-se o arquivo de configuração das versões dos pacotes
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages: 
+- stage: BuildAndSettings
+  jobs:
+    - job: BuildAndSettings
+      steps:
+      - checkout: NugetDependenciesConfiguration
+      - checkout: self
+      - task: CopyFiles@2 # Copiando o arquivo de configuração para a pasta atual do projeto em que se encontra a Solution
+        inputs:
+          SourceFolder: './nuget-centralized-dependencies-file'
+          contents: 'Directory.Packages.props'
+          targetFolder: './nuget-centralized-dependencies-file-app01/'
+      - task: UseDotNet@2 
+        displayName: "Use .NET 8.0.x"
+        inputs:
+          version: '8.0.x'
+          packageType: sdk
+      - task: DotNetCoreCLI@2
+        displayName: "Restore Packages"
+        inputs:
+          command: restore
+          projects: './nuget-centralized-dependencies-file-app01/SharedDependenciesFileApp1.sln'
+      - task: DotNetCoreCLI@2
+        displayName: "Build Application"
+        inputs:
+          command: build
+          projects: './nuget-centralized-dependencies-file-app01/SharedDependenciesFileApp1.sln'
