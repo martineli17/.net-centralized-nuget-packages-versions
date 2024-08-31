@@ -25,7 +25,7 @@ Nesse arquivo, é definido quais os pacotes que serão utilizados e, respectivam
 
 Com isso, em cada um dos projetos (`.csprog`) presente na solution, não precisará mais especificar qual é a versão de cada pacote utilizado, basta agora somente indicar qual o pacote.
 O trecho `<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>` é opcional, mas deixa explícito que está sendo utilizado um gerenciado de versões de pacotes.
-Caso queira desabilitar essa referência ao gerenciar de pacotes, basta colocar a flas como `false`, e com isso será exigido que informe a versão de cada um dos pacotes presente.
+Caso queira desabilitar essa referência ao gerenciar de pacotes, basta colocar a flag como `false`, e com isso será exigido que informe a versão de cada um dos pacotes presente.
 
 ![image](https://github.com/user-attachments/assets/2867bb11-5398-41fc-b711-a61f12da0bef)
 
