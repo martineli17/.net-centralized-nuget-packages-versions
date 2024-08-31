@@ -5,7 +5,7 @@ O processo de gerenciar as versões dos pacotes utilizados pela aplicação pode
 Um exemplo disso é quando se trabalha com vários microservices e, com isso, cria-se um repositório responsável por criar pacotes com códigos em comum e/ou precisem ser compartilhados entre todos os MS. 
 Nesse cenário, quando ocorre uma nova geração de versão desses pacotes comuns, é necessário alterar todos os MS impactados para que passem a utilizar essa última versão, trabalho que pode ser repetitivo e demorado.
 
-## Uma alterativa para o problema
+## Uma alternativa para o problema
 Uma alternativa para contornar o problema acima, seria criar um arquivo que tem como objetivo centralizar o gerenciamento de versões dos pacotes utilizados pela aplicação. Com isso, ao invés de deixar explícito em cada aplicação a versão a ser utilizada para um determinado pacote, essa versão é definada no arquivo de configuração.
 Em aplicações .NET, esse arquivo de configuração é definido como `Directory.Packages.props`. Basta criar um arquivo na raiz da solution (ou na raiz da cada projeto dentro da solution, o projeto irá utilizar o arquivo mais próximo dele).
 
