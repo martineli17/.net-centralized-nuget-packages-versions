@@ -25,9 +25,9 @@ stages:
       - checkout: self
       - task: CopyFiles@2 # Copiando o arquivo de configuração para a pasta atual do projeto em que se encontra a Solution
         inputs:
-          SourceFolder: './nuget-centralized-dependencies-file'
+          SourceFolder: './nuget-centralized-dependencies-file' # Diretório no qual encontra-se o arquivo de configuração das versões dos pacotes
           contents: 'Directory.Packages.props'
-          targetFolder: './nuget-centralized-dependencies-file-app01/'
+          targetFolder: './nuget-centralized-dependencies-file-app01/' # Diretório onde se encontra o projeto atual
       - task: UseDotNet@2 
         displayName: "Use .NET 8.0.x"
         inputs:
