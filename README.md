@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d56c4bb1-f81e-4323-a04f-af1e596e89ef)# Directory.Packages.props - Centralizando versões dos pacotes Nuget
+# Directory.Packages.props - Centralizando versões dos pacotes Nuget
 
 ## Contexto
 O processo de gerenciar as versões dos pacotes utilizados pela aplicação pode se tornar complexo quando há muitas aplicações que dependem dos mesmos pacotes e, em alguns casos, que também precisem utilizar as mesmas versões.
